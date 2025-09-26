@@ -5,6 +5,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center; /* centers text + image vertically */
+  min-height: 100vh;
 }
 
 .text {
@@ -25,4 +26,34 @@ h2 {
 img {
   max-width: 300px; /* adjust logo size */
   height: auto;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 700px) {
+  body {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+  }
+  .text {
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  img {
+    max-width: 80vw;
+    margin-bottom: 20px;
+  }
+  ul {
+    padding-left: 0;
+    list-style-position: inside;
+  }
 }
