@@ -9,12 +9,14 @@
 }
 /* Section Layouts */
 
+/* Force vertical stacking for sections on desktop */
 .about-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 32px;
+  display: block;
   margin-bottom: 40px;
+  background: #f6f8ff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(68,90,235,0.07);
+  padding: 24px 18px;
 }
 
 .games-section {
