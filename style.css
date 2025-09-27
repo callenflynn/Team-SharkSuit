@@ -124,3 +124,41 @@ img {
     list-style-position: inside;
   }
 }
+
+/* Modern enhancements */
+body {
+  background: linear-gradient(135deg, #e3e8ff 0%, #ffffff 100%);
+}
+.main-container {
+  padding: 32px 16px;
+  box-shadow: 0 4px 24px rgba(68, 90, 235, 0.08);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.95);
+}
+.about-section {
+  background: #f6f8ff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(68,90,235,0.07);
+  padding: 24px 18px;
+}
+.games-section {
+  background: #f6f8ff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(68,90,235,0.07);
+  padding: 24px 18px;
+}
+h1 {
+  color: #445aeb;
+  letter-spacing: 1px;
+}
+h2 {
+  color: #222;
+  margin-bottom: 12px;
+}
+.about-text, .games-list {
+  font-weight: 400;
+  color: #333;
+}
+img {
+  box-shadow: 0 2px 8px rgba(68,90,235,0.10);
+}
