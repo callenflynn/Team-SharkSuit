@@ -1,13 +1,5 @@
 /* Main container for vertical stacking */
 .main-container {
-  display: block;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-}
-/* Section Layouts */
-
-.main-container {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -15,9 +7,10 @@
   max-width: 900px;
   margin: 0 auto;
 }
-/* Stack sections vertically */
-/* Stack sections vertically, flex only for inner content */
+/* Section containers use flex for inner layout only */
 .about-section, .games-section {
+  flex: 1 1 45%;
+  min-width: 300px;
   display: block;
   margin-bottom: 40px;
   background: #f6f8ff;
@@ -29,13 +22,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   gap: 32px;
 }
 @media (max-width: 700px) {
   .about-section-inner, .games-section-inner {
     flex-direction: column;
-    align-items: center;
     gap: 16px;
   }
 }
