@@ -10,13 +10,35 @@
 /* Section Layouts */
 
 /* Force vertical stacking for sections on desktop */
-.about-section {
-  display: block;
-  margin-bottom: 40px;
+/* Stack sections vertically, but keep image right of text in each section */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.about-section, .games-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 0;
   background: #f6f8ff;
   border-radius: 14px;
   box-shadow: 0 2px 12px rgba(68,90,235,0.07);
   padding: 24px 18px;
+}
+@media (max-width: 700px) {
+  .about-section, .games-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 0;
+  }
+}
 }
 
 .games-section {
