@@ -1,8 +1,6 @@
 /* Main container for vertical stacking */
 .main-container {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  display: block;
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
@@ -19,17 +17,19 @@
   max-width: 900px;
   margin: 0 auto;
 }
+/* Each section stacks vertically, but image/text inside each section are side-by-side */
 .about-section, .games-section {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  margin-bottom: 0;
+  margin-bottom: 40px;
   background: #f6f8ff;
   border-radius: 14px;
   box-shadow: 0 2px 12px rgba(68,90,235,0.07);
   padding: 24px 18px;
+}
 }
 @media (max-width: 700px) {
   .about-section, .games-section {
