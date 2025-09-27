@@ -1,3 +1,39 @@
+/* Section Layouts */
+.about-section, .games-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.about-text, .games-list {
+  flex: 1;
+}
+
+.about-image img, .games-image img {
+  max-width: 300px;
+  height: auto;
+  border: 3px solid #445aeb;
+  border-radius: 8px;
+  background: #445aeb;
+  display: block;
+  margin-left: auto;
+}
+
+/* Responsive for sections */
+@media (max-width: 700px) {
+  .about-section, .games-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .about-image img, .games-image img {
+    max-width: 80vw;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+}
 body {
   font-family: 'Ubuntu', sans-serif;
   margin: 0;
