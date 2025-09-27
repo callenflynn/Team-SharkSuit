@@ -20,11 +20,11 @@
 .games-section {
   width: 100%;
   display: block;
-  text-align: center;
+  text-align: left;
   margin-bottom: 40px;
 }
 .games-section ul {
-  display: inline-block;
+  display: block;
   text-align: left;
   margin-bottom: 20px;
 }
