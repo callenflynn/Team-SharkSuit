@@ -162,3 +162,58 @@ h2 {
 img {
   box-shadow: 0 2px 8px rgba(68,90,235,0.10);
 }
+
+/* 404 page styles */
+.notfound-bg {
+  background: #7587ff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notfound-container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #445aeb44;
+  padding: 48px 32px;
+  text-align: center;
+}
+.notfound-img {
+  width: 220px;
+  margin-bottom: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #445aeb44;
+}
+
+/* Navigation styles: always tabs, never dropdown */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: #445aeb;
+  padding: 0 24px;
+  height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-menu {
+  display: flex !important;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-menu li a {
+  color: #fff;
+  font-family: 'Montserrat', 'Ubuntu', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px 6px 0 0;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-menu li a:hover {
+  background: #2336a3;
+  color: #e3e8ff;
+}
