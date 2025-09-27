@@ -266,3 +266,29 @@ img {
   background: #2336a3;
   color: #e3e8ff;
 }
+
+/* Section block wrapper for vertical stacking */
+.section {
+  position: relative;
+  width: 100%;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  margin-bottom: 80px;
+}
+/* Content row for side-by-side layout */
+.content-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+}
+.left, .right {
+  flex: 1 1 45%;
+  min-width: 250px;
+}
+@media (max-width: 700px) {
+  .content-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
