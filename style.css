@@ -300,3 +300,84 @@ img {
     gap: 16px;
   }
 }
+
+/* --- What We Play Section Styling --- */
+#games .section-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 48px;
+}
+#games .list {
+  flex: 2;
+  padding-left: 40px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#games h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #445aeb;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+#games ul {
+  font-size: 1.35rem;
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+#games ul li {
+  margin-bottom: 10px;
+}
+#games ul li a {
+  color: #445aeb;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+#games ul li a:hover {
+  color: #2336a3;
+  text-decoration: underline;
+}
+#games .image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#games .image img {
+  max-width: 340px;
+  min-width: 180px;
+  height: auto;
+  border: 3px solid #445aeb;
+  border-radius: 12px;
+  background: #445aeb;
+  box-shadow: 0 2px 12px #445aeb44;
+}
+@media (max-width: 900px) {
+  #games .section-inner {
+    gap: 24px;
+  }
+  #games .list {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 700px) {
+  #games .section-inner {
+    flex-direction: column;
+    gap: 16px;
+  }
+  #games .image {
+    justify-content: center;
+    margin-top: 12px;
+  }
+  #games h2 {
+    font-size: 2rem;
+  }
+  #games ul {
+    font-size: 1.1rem;
+  }
+}
