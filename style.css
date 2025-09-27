@@ -6,6 +6,7 @@
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
+  padding: 32px 16px;
 }
 /* Section containers use flex for inner layout only */
 .about-section, .games-section {
@@ -17,15 +18,27 @@
   border-radius: 14px;
   box-shadow: 0 2px 12px rgba(68,90,235,0.07);
   padding: 24px 18px;
+  box-sizing: border-box;
+  position: relative;
 }
-.about-section-inner, .games-section-inner {
+.section {
+  width: 100%;
+  margin-bottom: 40px;
+  background: #f6f8ff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(68,90,235,0.07);
+  padding: 24px 18px;
+  box-sizing: border-box;
+  position: relative;
+}
+.about-section-inner, .games-section-inner, .section-inner {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 32px;
 }
 @media (max-width: 700px) {
-  .about-section-inner, .games-section-inner {
+  .about-section-inner, .games-section-inner, .section-inner {
     flex-direction: column;
     gap: 16px;
   }
@@ -113,12 +126,7 @@
 body {
   font-family: 'Ubuntu', sans-serif;
   margin: 0;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* centers text + image vertically */
-  min-height: 100vh;
-  background: #fff;
+  background: linear-gradient(135deg, #e3e8ff 0%, #ffffff 100%);
 }
 
 .text {
