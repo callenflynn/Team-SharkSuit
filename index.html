@@ -95,11 +95,30 @@
       align-items: center;
       gap: 32px;
       flex-direction: row;
+      justify-content: space-between;
+    }
+    .section#about .text {
+      flex: 1 1 0;
+      min-width: 220px;
+    }
+    .section#about .image {
+      flex: 0 0 180px;
+      min-width: 140px;
+      max-width: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
     }
     @media (max-width: 600px) {
       .section-inner {
         flex-direction: column;
         gap: 12px;
+      }
+      .section#about .image, .section#about .text {
+        min-width: 0;
+        max-width: 100%;
+        flex: 1 1 100%;
+        justify-content: center;
       }
     }
     .text {
