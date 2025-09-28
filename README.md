@@ -1,6 +1,6 @@
 # Team SharkSuit
 
-![Team SharkSuit Logo](sharksuit.png)
+<img src="sharksuit.png" alt="Team SharkSuit Logo" width="120">
 
 Welcome to the official Team SharkSuit website repository!
 
@@ -14,4 +14,3 @@ Team SharkSuit is a gaming community focused on fun, teamwork, and competitive p
 - Clash Royale
 - Forza Horizon 5
 
-[Team SharkSuit](sharksuit.png)
