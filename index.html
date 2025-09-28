@@ -19,13 +19,33 @@
       color: #e3e6ee;
       font-family: 'Montserrat', 'Ubuntu', Arial, sans-serif;
     }
+    .banner-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      z-index: 100;
+      height: 220px;
+      overflow: hidden;
+      background: transparent;
+    }
+    .banner-img {
+      width: 100vw;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: 0 2px 18px #445aeb44;
+      display: block;
+    }
     .main-container {
       background: #23263a;
       border-radius: 18px;
       box-shadow: 0 4px 24px #445aeb22;
       padding: 32px;
-      margin: 32px auto;
+      margin: 252px auto 32px auto;
       max-width: 900px;
+      position: relative;
+      z-index: 10;
     }
     .section {
       background: #23263a;
@@ -122,8 +142,8 @@
   </style>
 </head>
 <body>
-  <div style="width:100vw; margin:0 0 24px 0; position:relative; left:50%; right:50%; transform:translate(-50%,0);">
-    <img src="banner1.webp" alt="Team SharkSuit Banner" style="width:100vw; max-width:100vw; border-radius:0; box-shadow:0 2px 18px #445aeb44; display:block;">
+  <div class="banner-container">
+    <img src="banner1.webp" alt="Team SharkSuit Banner" class="banner-img">
   </div>
   <div class="main-container">
     <section class="section" id="about">
