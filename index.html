@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Montserrat:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/webp" href="sharkgame.webp">
+  <link rel="preload" as="image" href="banner1.webp">
   <style>
     body {
       background: #181a20;
@@ -22,6 +23,7 @@
       padding: 0;
     }
     .banner {
+      background-color: #181a20;
       background-image: url("banner1.webp");
       background-size: cover;
       background-position: center;
@@ -33,6 +35,8 @@
       box-shadow: 0 2px 18px #445aeb44;
       display: block;
       overflow: hidden;
+      transform: translateZ(0);
+      will-change: background-image;
     }
     .main-container {
       background: #23263a;
