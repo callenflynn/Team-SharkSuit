@@ -66,6 +66,7 @@
         margin-bottom: 18px;
         max-width: 100vw;
         width: 100vw;
+        box-sizing: border-box;
       }
     }
     .main-container {
@@ -143,8 +144,17 @@
     }
     @media (max-width: 600px) {
       .image img {
-        max-width: 90vw;
+        max-width: 100%;
         height: auto;
+      }
+      .list {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 0 0 8px;
+      }
+      .list ul {
+        padding-left: 18px;
+        margin: 0;
       }
     }
     nav {
