@@ -35,6 +35,16 @@
     <p>Learn more at <a href="https://www.callofduty.com/warzone" target="_blank" rel="noopener">callofduty.com/warzone</a></p>
     <a href="index.html" class="hero-cta">Back to Team SharkSuit</a>
   </div>
- 
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.getElementById('toggle-images');
+        var imgs = document.getElementById('previous-images');
+        if (btn && imgs) {
+          btn.onclick = function() {
+            imgs.style.display = imgs.style.display === 'none' ? 'block' : 'none';
+          };
+        }
+      });
+    </script>
 </body>
 </html>
