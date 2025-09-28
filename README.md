@@ -13,3 +13,5 @@ Team SharkSuit is a gaming community for both competetive and relaxed gaming
 - Clash Royale
 - Forza Horizon 5
 
+## STAFF
+https://docs.google.com/spreadsheets/d/17vi3XhZVbn7oA4JtA2M38VlAWCCEsEXab9SXjDnkc_k/edit?usp=sharing
