@@ -22,13 +22,14 @@
       padding: 0;
     }
     .banner-container {
-      position: fixed;
-      top: 0;
-      left: 0;
       width: 100vw;
-      height: 220px;
+      margin: 0 0 24px 0;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      transform: translate(-50%,0);
       z-index: 100;
-      pointer-events: none;
+      height: 220px;
       background: transparent;
     }
     .banner-img {
@@ -44,30 +45,13 @@
       border-radius: 18px;
       box-shadow: 0 4px 24px #445aeb22;
       padding: 32px;
-      margin: 0 auto;
+      margin: 252px auto 32px auto;
       max-width: 900px;
       position: relative;
       z-index: 10;
-      margin-top: 252px;
     }
-    /* Overlay effect: create a pseudo-element to cover the banner as you scroll */
-    .main-container::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 220px;
-      background: #23263a;
-      z-index: 101;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-    /* Show overlay when scrolled past banner */
-    body.scrolled .main-container::before {
-      opacity: 1;
-    }
+    /* Remove overlay and scroll effect */
+    .main-container::before { display: none !important; }
     .section {
       background: #23263a;
       border-radius: 14px;
@@ -162,13 +146,8 @@
     }
   </style>
   <script>
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 200) {
-        document.body.classList.add('scrolled');
-      } else {
-        document.body.classList.remove('scrolled');
-      }
-    });
+    // Remove scroll overlay effect
+    document.body.classList.remove('scrolled');
   </script>
 </head>
 <body>
