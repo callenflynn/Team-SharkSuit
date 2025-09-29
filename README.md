@@ -1,6 +1,6 @@
 # Team SharkSuit
 
-<img src="sharksuit.png" alt="Team SharkSuit Logo" width="120">
+<img src="sharksuit.webp" alt="Team SharkSuit Logo" width="120">
 
 Welcome to the official Team SharkSuit website repository!
 
