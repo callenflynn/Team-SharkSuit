@@ -388,11 +388,11 @@
               !member.game.name.toLowerCase().includes('/help') &&
               !member.game.name.toLowerCase().includes('spotify') &&
               !member.game.name.toLowerCase().includes('youtube') &&
-              member.game.name.length > 2 // Ignore very short game names
+              member.game.name.length > 2 
             )
             .map(member => member.game.name)
             .filter((game, index, arr) => arr.indexOf(game) === index) // Remove duplicates
-            .slice(0, 5); // Show up to 5 different games
+            .slice(0, 5); 
           
           if (gamesBeingPlayed.length > 0) {
             const gamesList = gamesBeingPlayed.map(game => `<span style="background:#2a2d37; padding:4px 8px; border-radius:12px; border:1px solid #445aeb; font-size:12px; margin-right:8px; margin-bottom:4px; display:inline-block;">🎮 ${game}</span>`).join('');
@@ -409,20 +409,6 @@
           }
         }
         
-        // Server info
-        if (discordData.name) {
-          newsItems.push({
-            content: `🦈 <strong>${discordData.name}</strong> Discord server is active! Join us for team coordination and updates.`,
-            author: "Team SharkSuit",
-            formattedDate: new Date().toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })
-          });
-        }
-        
-        // Fallback if no data
         if (newsItems.length === 0) {
           newsItems.push({
             content: "🦈 Welcome to Team SharkSuit! Join our Discord for the latest announcements and team updates.",
