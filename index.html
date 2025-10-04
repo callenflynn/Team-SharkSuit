@@ -329,7 +329,7 @@
           throw new Error('Failed to load news');
         }
         const data = await response.json();
-        displayNews(data.news || []);
+        displayNews(Array.isArray(data) ? data : []);
       } catch (error) {
         console.error('Error loading news:', error);
         document.getElementById('news-container').innerHTML = 
