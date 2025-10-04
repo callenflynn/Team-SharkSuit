@@ -334,28 +334,26 @@
         }
         const discordData = await response.json();
         
-        // Extract recent activity or member info as "news"
         const newsItems = [];
         
-        // Add server info as a news item
-        if (discordData.name) {
-          newsItems.push({
-            content: `🎮 ${discordData.name} is active with ${discordData.presence_count || 0} members online! Join us on Discord for the latest updates and team coordination.`,
-            author: "Team SharkSuit",
-            formattedDate: new Date().toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })
-          });
-        }
-        
-        // Add recent member activity if available
+        // Show online members with profile pics
         if (discordData.members && discordData.members.length > 0) {
-          const activeMember = discordData.members[0];
-          if (activeMember.status !== 'offline') {
+          const onlineMembers = discordData.members.filter(member => member.status !== 'offline');
+          
+          if (onlineMembers.length > 0) {
+            const displayMembers = onlineMembers.slice(0, 8);
+            const extraCount = onlineMembers.length - 8;
+            
+            let profilePicsHTML = displayMembers.map(member => 
+              `<img src="${member.avatar_url}" alt="${member.username}" title="${member.username}" style="width:32px; height:32px; border-radius:50%; margin-right:8px; border:2px solid #445aeb; box-shadow:0 2px 4px rgba(0,0,0,0.3);">`
+            ).join('');
+            
+            if (extraCount > 0) {
+              profilePicsHTML += `<span style="background:#445aeb; color:white; border-radius:50%; width:32px; height:32px; display:inline-flex; align-items:center; justify-content:center; font-size:12px; font-weight:bold; margin-right:8px;">+${extraCount}</span>`;
+            }
+            
             newsItems.push({
-              content: `💚 ${activeMember.username} is currently ${activeMember.status} and active in the Discord!`,
+              content: `<div style="margin-bottom:12px;">🟢 <strong>${onlineMembers.length} members online:</strong></div><div style="display:flex; align-items:center; flex-wrap:wrap;">${profilePicsHTML}</div>`,
               author: "Discord Activity",
               formattedDate: new Date().toLocaleDateString('en-US', {
                 year: 'numeric',
@@ -364,6 +362,42 @@
               })
             });
           }
+        }
+        
+        // Show what games members are playing
+        if (discordData.members && discordData.members.length > 0) {
+          const gamesBeingPlayed = discordData.members
+            .filter(member => member.game && member.game.name && member.status !== 'offline')
+            .map(member => member.game.name)
+            .filter((game, index, arr) => arr.indexOf(game) === index) // Remove duplicates
+            .slice(0, 5); // Show up to 5 different games
+          
+          if (gamesBeingPlayed.length > 0) {
+            const gamesList = gamesBeingPlayed.map(game => `<span style="background:#2a2d37; padding:4px 8px; border-radius:12px; border:1px solid #445aeb; font-size:12px; margin-right:8px; margin-bottom:4px; display:inline-block;">🎮 ${game}</span>`).join('');
+            
+            newsItems.push({
+              content: `<div style="margin-bottom:8px;"><strong>Currently Playing:</strong></div><div style="display:flex; flex-wrap:wrap;">${gamesList}</div>`,
+              author: "Game Activity",
+              formattedDate: new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })
+            });
+          }
+        }
+        
+        // Server info
+        if (discordData.name) {
+          newsItems.push({
+            content: `🦈 <strong>${discordData.name}</strong> Discord server is active! Join us for team coordination and updates.`,
+            author: "Team SharkSuit",
+            formattedDate: new Date().toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })
+          });
         }
         
         // Fallback if no data
