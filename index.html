@@ -336,9 +336,17 @@
         
         const newsItems = [];
         
-        // Show online members with profile pics
+        // Show online members with profile pics (ignore bots)
         if (discordData.members && discordData.members.length > 0) {
-          const onlineMembers = discordData.members.filter(member => member.status !== 'offline');
+          const onlineMembers = discordData.members.filter(member => 
+            member.status !== 'offline' && 
+            !member.bot && 
+            !member.username.toLowerCase().includes('bot') &&
+            !member.username.toLowerCase().includes('dank memer') &&
+            !member.username.toLowerCase().includes('dyno') &&
+            !member.username.toLowerCase().includes('carl') &&
+            !member.username.toLowerCase().includes('mee6')
+          );
           
           if (onlineMembers.length > 0) {
             const displayMembers = onlineMembers.slice(0, 8);
@@ -364,10 +372,24 @@
           }
         }
         
-        // Show what games members are playing
+        // Show what games members are playing (filter out bots and unwanted activities)
         if (discordData.members && discordData.members.length > 0) {
           const gamesBeingPlayed = discordData.members
-            .filter(member => member.game && member.game.name && member.status !== 'offline')
+            .filter(member => 
+              member.game && 
+              member.game.name && 
+              member.status !== 'offline' &&
+              !member.bot &&
+              !member.username.toLowerCase().includes('bot') &&
+              !member.username.toLowerCase().includes('dank memer') &&
+              !member.username.toLowerCase().includes('dyno') &&
+              !member.username.toLowerCase().includes('carl') &&
+              !member.username.toLowerCase().includes('mee6') &&
+              !member.game.name.toLowerCase().includes('/help') &&
+              !member.game.name.toLowerCase().includes('spotify') &&
+              !member.game.name.toLowerCase().includes('youtube') &&
+              member.game.name.length > 2 // Ignore very short game names
+            )
             .map(member => member.game.name)
             .filter((game, index, arr) => arr.indexOf(game) === index) // Remove duplicates
             .slice(0, 5); // Show up to 5 different games
