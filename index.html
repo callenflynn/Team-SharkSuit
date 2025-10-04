@@ -324,12 +324,12 @@
     // Load and display news
     async function loadNews() {
       try {
-        const response = await fetch('news.json');
+        const response = await fetch('https://sharksuitbot.ctflynn10.workers.dev/');
         if (!response.ok) {
           throw new Error('Failed to load news');
         }
-        const data = await response.json();
-        displayNews(Array.isArray(data) ? data : []);
+        const newsItems = await response.json();
+        displayNews(newsItems || []);
       } catch (error) {
         console.error('Error loading news:', error);
         document.getElementById('news-container').innerHTML = 
