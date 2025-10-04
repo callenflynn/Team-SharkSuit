@@ -8,7 +8,7 @@
   <link rel="icon" type="image/webp" href="sharkgame.webp">
   <link rel="stylesheet" href="style.css">
   <style>
-    body { background: #181a20; color: #e3e6ee; }
+    body { background: #181a20; color: #e3e6ee; margin: 0; padding: 16px; box-sizing: border-box; }
     .gallery-container {
       max-width: 900px;
       margin: 48px auto;
@@ -17,6 +17,8 @@
       box-shadow: 0 4px 24px #445aeb22;
       padding: 32px;
       text-align: center;
+      width: 100%;
+      box-sizing: border-box;
     }
     h1 { color: #445aeb; margin-bottom: 32px; }
     .art-img {
@@ -37,6 +39,21 @@
     a.hero-cta {
       margin-top: 24px;
       display: inline-block;
+    }
+    @media (max-width: 600px) {
+      body { padding: 8px; }
+      .gallery-container {
+        margin: 16px auto;
+        padding: 16px;
+      }
+      .art-img {
+        max-width: 100%;
+        margin-bottom: 16px;
+      }
+      .caption {
+        font-size: 1rem;
+        margin-bottom: 24px;
+      }
     }
   </style>
 </head>

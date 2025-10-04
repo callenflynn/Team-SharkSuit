@@ -8,15 +8,22 @@
   <link rel="icon" type="image/webp" href="sharkgame.webp">
   <link rel="stylesheet" href="style.css">
   <style>
-  body { background: url('https://mlpnk72yciwc.i.optimole.com/cqhiHLc.IIZS~2ef73/w:auto/h:auto/q:75/https://bleedingcool.com/wp-content/uploads/2024/11/Call-Of-Duty-Black-Ops-6-Season-One.jpg') center/cover no-repeat; color: #fff; }
+  body { background: url('https://mlpnk72yciwc.i.optimole.com/cqhiHLc.IIZS~2ef73/w:auto/h:auto/q:75/https://bleedingcool.com/wp-content/uploads/2024/11/Call-Of-Duty-Black-Ops-6-Season-One.jpg') center/cover no-repeat; color: #fff; margin: 0; padding: 16px; box-sizing: border-box; }
     .warzone-logo { width: 220px; margin: 32px auto 16px; display: block; background: transparent; }
-    .warzone-content { background: rgba(0,0,0,0.85); border-radius: 18px; max-width: 700px; margin: 32px auto; padding: 32px; box-shadow: 0 4px 24px #445aeb44; }
+    .warzone-content { background: rgba(0,0,0,0.85); border-radius: 18px; max-width: 700px; margin: 32px auto; padding: 32px; box-shadow: 0 4px 24px #445aeb44; width: 100%; box-sizing: border-box; }
     h1 { color: #445aeb; }
     a { color: #445aeb; }
     .video { margin: 24px 0; }
     footer { margin-top: 48px; padding: 32px 0; background: rgba(0,0,0,0.7); border-radius: 18px; text-align: center; }
     footer h2 { color: #445aeb; margin-bottom: 18px; }
     footer p { color: #fff; margin-bottom: 18px; }
+    @media (max-width: 600px) {
+      body { padding: 8px; }
+      .warzone-logo { width: 180px; margin: 16px auto 12px; }
+      .warzone-content { margin: 16px auto; padding: 16px; }
+      .video { margin: 16px 0; }
+      footer { margin-top: 24px; padding: 16px 0; }
+    }
   </style>
 </head>
 <body>

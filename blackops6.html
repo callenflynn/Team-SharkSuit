@@ -8,12 +8,18 @@
   <link rel="icon" type="image/webp" href="sharkgame.webp">
   <link rel="stylesheet" href="style.css">
   <style>
-    body { background: url('https://4kwallpapers.com/images/wallpapers/call-of-duty-black-3840x2160-18321.jpeg') center/cover no-repeat; color: #fff; }
+    body { background: url('https://4kwallpapers.com/images/wallpapers/call-of-duty-black-3840x2160-18321.jpeg') center/cover no-repeat; color: #fff; margin: 0; padding: 16px; box-sizing: border-box; }
     .bo6-logo { width: 220px; margin: 32px auto 16px; display: block; background: transparent; }
-    .bo6-content { background: rgba(0,0,0,0.85); border-radius: 18px; max-width: 700px; margin: 32px auto; padding: 32px; box-shadow: 0 4px 24px #f9680044; }
+    .bo6-content { background: rgba(0,0,0,0.85); border-radius: 18px; max-width: 700px; margin: 32px auto; padding: 32px; box-shadow: 0 4px 24px #f9680044; width: 100%; box-sizing: border-box; }
     h1 { color: #f96800; }
     a { color: #f96800; }
     .video { margin: 24px 0; }
+    @media (max-width: 600px) {
+      body { padding: 8px; }
+      .bo6-logo { width: 180px; margin: 16px auto 12px; }
+      .bo6-content { margin: 16px auto; padding: 16px; }
+      .video { margin: 16px 0; }
+    }
   </style>
 </head>
 <body>

@@ -8,12 +8,18 @@
   <link rel="icon" type="image/webp" href="sharkgame.webp">
   <link rel="stylesheet" href="style.css">
   <style>
-    body { background: url('https://cdn.wallpapersafari.com/60/44/Bv4F0o.jpg') center/cover no-repeat; color: #222; }
+    body { background: url('https://cdn.wallpapersafari.com/60/44/Bv4F0o.jpg') center/cover no-repeat; color: #222; margin: 0; padding: 16px; box-sizing: border-box; }
     .cr-logo { width: 220px; margin: 32px auto 16px; display: block; background: transparent; }
-    .cr-content { background: rgba(255,255,255,0.95); border-radius: 18px; max-width: 700px; margin: 32px auto; padding: 32px; box-shadow: 0 4px 24px #445aeb44; }
+    .cr-content { background: rgba(255,255,255,0.95); border-radius: 18px; max-width: 700px; margin: 32px auto; padding: 32px; box-shadow: 0 4px 24px #445aeb44; width: 100%; box-sizing: border-box; }
     h1 { color: #445aeb; }
     a { color: #445aeb; }
     .video { margin: 24px 0; }
+    @media (max-width: 600px) {
+      body { padding: 8px; }
+      .cr-logo { width: 180px; margin: 16px auto 12px; }
+      .cr-content { margin: 16px auto; padding: 16px; }
+      .video { margin: 16px 0; }
+    }
   </style>
 </head>
 <body>
