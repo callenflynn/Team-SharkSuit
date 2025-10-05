@@ -22,9 +22,16 @@
     }
     h1 { color: #445aeb; margin-bottom: 32px; }
     .gallery-grid {
-      column-count: 3;
-      column-gap: 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
       margin-bottom: 32px;
+      align-items: start;
+    }
+    .gallery-column {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
     .art-img {
       width: 100%;
@@ -45,9 +52,6 @@
       padding: 4px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       overflow: hidden;
-      margin-bottom: 8px;
-      break-inside: avoid;
-      display: inline-block;
       width: 100%;
     }
     .art-item:hover {
@@ -70,9 +74,11 @@
         padding: 16px;
       }
       .gallery-grid {
-        column-count: 2;
-        column-width: 150px;
-        column-gap: 4px;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+      }
+      .gallery-column {
+        gap: 4px;
       }
       .art-item {
         padding: 2px;
@@ -89,17 +95,23 @@
   <div class="gallery-container">
     <h1>SharkSuit Game Art</h1>
     <div class="gallery-grid">
-      <div class="art-item">
-        <img src="shark-cod-1.webp" alt="SharkSuit Call of Duty Art" class="art-img" loading="lazy">
+      <div class="gallery-column">
+        <div class="art-item">
+          <img src="shark-cod-1.webp" alt="SharkSuit Call of Duty Art" class="art-img" loading="lazy">
+        </div>
+        <div class="art-item">
+          <img src="bot1.png" alt="SharkSuit Bot Art" class="art-img" loading="lazy">
+        </div>
       </div>
-      <div class="art-item">
-        <img src="racer1.webp" alt="SharkSuit Racing Art" class="art-img" loading="lazy">
+      <div class="gallery-column">
+        <div class="art-item">
+          <img src="racer1.webp" alt="SharkSuit Racing Art" class="art-img" loading="lazy">
+        </div>
       </div>
-      <div class="art-item">
-        <img src="bot1.png" alt="SharkSuit Bot Art" class="art-img" loading="lazy">
-      </div>
-      <div class="art-item">
-        <img src="SUITMAN (shark).webp" alt="SUITMAN Shark Art" class="art-img" loading="lazy">
+      <div class="gallery-column">
+        <div class="art-item">
+          <img src="SUITMAN (shark).webp" alt="SUITMAN Shark Art" class="art-img" loading="lazy">
+        </div>
       </div>
     </div>
     <a href="https://ssut.vercel.app" class="hero-cta">Back to Team SharkSuit</a>
