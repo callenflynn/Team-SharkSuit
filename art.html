@@ -22,11 +22,9 @@
     }
     h1 { color: #445aeb; margin-bottom: 32px; }
     .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 4px;
+      columns: 3;
+      column-gap: 8px;
       margin-bottom: 32px;
-      align-items: start;
     }
     .art-img {
       width: 100%;
@@ -47,6 +45,10 @@
       padding: 4px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       overflow: hidden;
+      margin-bottom: 8px;
+      break-inside: avoid;
+      display: inline-block;
+      width: 100%;
     }
     .art-item:hover {
       transform: translateY(-4px);
@@ -68,11 +70,12 @@
         padding: 16px;
       }
       .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2px;
+        columns: 2;
+        column-gap: 4px;
       }
       .art-item {
         padding: 2px;
+        margin-bottom: 4px;
       }
       .caption {
         font-size: 1rem;
