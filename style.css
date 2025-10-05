@@ -41,8 +41,7 @@
     gap: 16px;
   }
 }
-}
-/* the error above idk if i should fix it but it works lol */
+/* fixed error :( */
 .about-section .about-text, .about-section .about-image,
 .games-section .games-list, .games-section .games-image {
   display: inline-block;
