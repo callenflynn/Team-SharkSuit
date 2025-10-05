@@ -21,15 +21,44 @@
       box-sizing: border-box;
     }
     h1 { color: #445aeb; margin-bottom: 32px; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-auto-rows: 200px;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
     .art-img {
       background: #23263a;
       border-radius: 12px;
       box-shadow: 0 2px 12px #445aeb44;
       padding: 8px;
-      max-width: 340px;
       width: 100%;
-      margin: 0 auto 24px auto;
+      height: 100%;
+      object-fit: cover;
       display: block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .art-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px #445aeb66;
+    }
+    .art-item {
+      background: #23263a;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #445aeb44;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .art-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 24px #445aeb55;
+    }
+    .art-item:nth-child(1) {
+      grid-row: span 2;
+    }
+    .art-item:nth-child(3) {
+      grid-row: span 2;
     }
     .caption {
       color: #e3e6ee;
@@ -46,9 +75,14 @@
         margin: 16px auto;
         padding: 16px;
       }
-      .art-img {
-        max-width: 100%;
-        margin-bottom: 16px;
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-auto-rows: 150px;
+        gap: 12px;
+      }
+      .art-item:nth-child(1),
+      .art-item:nth-child(3) {
+        grid-row: span 1;
       }
       .caption {
         font-size: 1rem;
@@ -60,9 +94,17 @@
 <body>
   <div class="gallery-container">
     <h1>SharkSuit Game Art</h1>
-    <img src="shark-cod-1.webp" alt="placeholder.webp" class="art-img" loading="lazy">
-    <img src="racer1.webp" alt="placeholder.webp" class="art-img" loading="lazy">
-    <img src="bot1.png" alt="placeholder.webp" class="art-img" loading="lazy">
+    <div class="gallery-grid">
+      <div class="art-item">
+        <img src="shark-cod-1.webp" alt="SharkSuit Call of Duty Art" class="art-img" loading="lazy">
+      </div>
+      <div class="art-item">
+        <img src="racer1.webp" alt="SharkSuit Racing Art" class="art-img" loading="lazy">
+      </div>
+      <div class="art-item">
+        <img src="bot1.png" alt="SharkSuit Bot Art" class="art-img" loading="lazy">
+      </div>
+    </div>
     <a href="https://ssut.vercel.app" class="hero-cta">Back to Team SharkSuit</a>
   </div>
 </body>
