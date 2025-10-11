@@ -4,6 +4,20 @@ Allow: /
 # Sitemap location
 Sitemap: https://ssut.vercel.app/sitemap.xml
 
+# Priority crawling for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Allow specific file types
 Allow: /*.html
 Allow: /*.css
 Allow: /*.js
@@ -11,5 +25,10 @@ Allow: /*.webp
 Allow: /*.png
 Allow: /*.jpg
 Allow: /*.jpeg
+
+# Block unnecessary files
+Disallow: /*.json$
+Disallow: /manifest.json
+Allow: /sitemap.xml
 
 Crawl-delay: 1
