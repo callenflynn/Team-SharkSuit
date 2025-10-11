@@ -41,7 +41,6 @@
     gap: 16px;
   }
 }
-/* fixed error :( */
 .about-section .about-text, .about-section .about-image,
 .games-section .games-list, .games-section .games-image {
   display: inline-block;
