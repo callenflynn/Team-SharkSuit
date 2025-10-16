@@ -394,12 +394,10 @@
     });
     images.forEach(img => imageObserver.observe(img));
 
-    // Load news when page loads
     document.addEventListener('DOMContentLoaded', function() {
       loadDiscordNews();
     });
 
-    // Load and display news from Discord widget API
     async function loadDiscordNews() {
       try {
         const response = await fetch('https://discord.com/api/guilds/1422359586949566577/widget.json');
@@ -410,7 +408,6 @@
         
         const newsItems = [];
         
-        // Show online members with profile pics (ignore bots)
         if (discordData.members && discordData.members.length > 0) {
           const onlineMembers = discordData.members.filter(member => 
             member.status !== 'offline' && 
@@ -446,7 +443,6 @@
           }
         }
         
-        // Show what games members are playing (filter out bots and unwanted activities)
         if (discordData.members && discordData.members.length > 0) {
           const gamesBeingPlayed = discordData.members
             .filter(member => 
@@ -465,7 +461,7 @@
               member.game.name.length > 2 
             )
             .map(member => member.game.name)
-            .filter((game, index, arr) => arr.indexOf(game) === index) // Remove duplicates
+            .filter((game, index, arr) => arr.indexOf(game) === index)
             .slice(0, 5); 
           
           if (gamesBeingPlayed.length > 0) {
