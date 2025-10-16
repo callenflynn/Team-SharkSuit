@@ -302,10 +302,130 @@
       color: #e3e6ee;
       text-shadow: 0 0 8px #445aeb;
     }
+    /* Schedule Button Styles */
+    #scheduleButton {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #445aeb;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px #445aeb44;
+      display: none;
+      z-index: 999;
+      transition: all 0.3s ease;
+    }
+    #scheduleButton:hover {
+      background: #23263a;
+      color: #445aeb;
+      box-shadow: 0 4px 18px #445aeb88;
+      transform: scale(1.1);
+    }
+    #scheduleButton.show {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Modal Popup Styles */
+    #scheduleModal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    #scheduleModal.show {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background-color: #23263a;
+      border: 2px solid #445aeb;
+      border-radius: 12px;
+      padding: 20px;
+      width: 90%;
+      max-width: 900px;
+      max-height: 85vh;
+      overflow-y: auto;
+      box-shadow: 0 4px 20px #445aeb44;
+      animation: slideUp 0.3s ease;
+    }
+    @keyframes slideUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #445aeb;
+    }
+    .modal-header h2 {
+      color: #445aeb;
+      margin: 0;
+    }
+    .close-btn {
+      background: none;
+      border: none;
+      color: #445aeb;
+      font-size: 28px;
+      cursor: pointer;
+      padding: 0;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .close-btn:hover {
+      color: #e3e6ee;
+      text-shadow: 0 0 8px #445aeb;
+    }
+    .modal-content iframe {
+      width: 100%;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
   <div class="banner"></div>
+  
+  <!-- Schedule Button -->
+  <button id="scheduleButton" title="View Schedule">📅</button>
+  
+  <!-- Schedule Modal Popup -->
+  <div id="scheduleModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Team Schedule</h2>
+        <button class="close-btn" id="closeSchedule">&times;</button>
+      </div>
+      <iframe src="https://global-worm-2be.notion.site/ebd/28e4905203e2800a9fe0caa798b13633?v=28e4905203e280d0b76a000c0ca43a7f" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+  
   <header style="text-align: center; margin: 100px 0 24px 0; padding: 0 16px;">
     <h1 style="color: #445aeb; font-size: 2.8rem; margin: 0; text-shadow: 0 2px 8px rgba(68, 90, 235, 0.3);"> </h1>
     <p style="color: #e3e6ee; font-size: 1.2rem; margin: 8px 0 0 0; opacity: 0.9;"> </p>
@@ -520,6 +640,48 @@
 
       container.innerHTML = newsHTML;
     }
+
+    // Schedule Button Logic
+    const scheduleButton = document.getElementById('scheduleButton');
+    const scheduleModal = document.getElementById('scheduleModal');
+    const closeSchedule = document.getElementById('closeSchedule');
+
+    // Show schedule button when scrolled down
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scheduleButton.classList.add('show');
+      } else {
+        scheduleButton.classList.remove('show');
+      }
+    });
+
+    // Open modal on button click
+    scheduleButton.addEventListener('click', () => {
+      scheduleModal.classList.add('show');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    });
+
+    // Close modal on close button click
+    closeSchedule.addEventListener('click', () => {
+      scheduleModal.classList.remove('show');
+      document.body.style.overflow = 'auto'; // Re-enable scrolling
+    });
+
+    // Close modal when clicking outside the modal content
+    scheduleModal.addEventListener('click', (event) => {
+      if (event.target === scheduleModal) {
+        scheduleModal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && scheduleModal.classList.contains('show')) {
+        scheduleModal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+      }
+    });
   </script>
 </main>
 </body>
