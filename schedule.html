@@ -7,22 +7,60 @@
   <meta name="description" content="Team SharkSuit schedule">
   <link rel="icon" href="sharkgame.webp" type="image/webp">
   <style>
-    html,body { height:100%; margin:0; background:#121217; color:#e3e6ee; font-family: 'Montserrat', 'Ubuntu', Arial, sans-serif; }
-    .container { height:100%; display:flex; flex-direction:column; }
-    header { padding:16px 20px; display:flex; align-items:center; justify-content:space-between; background:#181a20; border-bottom:2px solid #445aeb; }
-    header h1 { margin:0; color:#445aeb; font-size:20px; }
-    .close { color:#e3e6ee; text-decoration:none; background:#445aeb; padding:8px 12px; border-radius:8px; }
-    iframe { flex:1; border:0; width:100%; min-height:0; }
-    .notice { padding:12px 20px; font-size:14px; background:#23263a; }
+    html,body { height:100%; margin:0; background:#000; }
+    /* Fullpage iframe */
+    iframe#notionSchedule {
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      border:0;
+      z-index:1;
+      background:#fff;
+    }
+    /* Overlay header with back button */
+    .overlay {
+      position:fixed;
+      top:12px;
+      left:12px;
+      z-index:2;
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    .back-btn {
+      background:rgba(35,38,58,0.9);
+      color:#e3e6ee;
+      border:1px solid #445aeb;
+      padding:8px 12px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow:0 6px 18px rgba(68,90,235,0.12);
+    }
+    .back-btn:hover { background:#23263a; color:#fff; }
+    .note {
+      position:fixed;
+      top:12px;
+      right:12px;
+      z-index:2;
+      background:rgba(35,38,58,0.9);
+      color:#e3e6ee;
+      padding:8px 12px;
+      border-radius:8px;
+      font-size:13px;
+      border:1px solid #2b2f44;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Team SharkSuit - Schedule</h1>
-      <a class="close" href="/">Back</a>
-    </header>
-    <iframe src="https://global-worm-2be.notion.site/28e4905203e2800a9fe0caa798b13633?v=28e4905203e280d0b76a000c0ca43a7f&pvs=4" allowfullscreen></iframe>
+  <div class="overlay">
+    <a class="back-btn" href="/">← Back</a>
   </div>
+  <div class="note">If the embed doesn't load, open it directly on Notion.</div>
+
+  <iframe id="notionSchedule" src="https://global-worm-2be.notion.site/ebd/28e4905203e2800a9fe0caa798b13633?v=28e4905203e280d0b76a000c0ca43a7f" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+
 </body>
 </html>
